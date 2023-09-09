@@ -1,0 +1,157 @@
+ <style>
+    /* Add styling for the sections */
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    .calculator {
+
+        max-width: 400px;
+        border: 0px solid #ccc;
+        border-radius: 5px;
+        background-color: #0e0;
+        margin: 10px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;
+    }
+
+    /* -------------------------------ALL INPUTS SECTION STYLE --------------------------------------------------------- */
+
+    /* INPUTS Section */
+
+    .inputs {
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /*  INPUTS Section Heading */
+
+    .inputsection-heading {
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: left;
+        margin: 10px 10px 0px 10px;
+        padding: 10px 10px 10px 10px;
+    }
+
+
+    /* INPUTS - Original price Form Group */
+
+    .originalprice-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* INPUTS - Discount percentage Form Group */
+
+    .discountpercentage-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* INPUTS - Final percentage-symbol */
+
+    .percentage-symbol {
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    /* INPUTS - LABELS STYLING */
+
+    label {
+        display: inline-block;
+        width: 40%;
+        text-align: right;
+    }
+
+    /* INPUTS SECTION - inputs fields */
+
+    input[type="number"],
+    input[type="text"] {
+        width: 40%;
+        padding: 5px;
+    }
+
+    /* -------------------------------ALL RESULTS SECTION STYLE --------------------------------------------------------- */
+
+    /* This is the RESULTS Section */
+
+    .results {
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* RESULTS Section Heading */
+
+    .section-heading {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* RESUTS - Discount Form Group */
+
+    .discount-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* RESUTS - Final Price Form Group */
+
+    .finalprice-form-group {
+        margin-bottom: 15px;
+    }
+
+
+
+    /* RESUTS - Final Price Form Group */
+
+    label {
+        display: inline-block;
+        width: 40%;
+        text-align: right;
+    }
+
+    /* RESUTS SECTION - LABELS STYLING  */
+
+    input[type="number"],
+    input[type="text"] {
+        width: 40%;
+        padding: 5px;
+    }
+
+    /* -------------------------------ALL DETAILS SECTION STYLE --------------------------------------------------------- */
+
+    /* New styles for the Details section */
+
+    #detailsSection {
+        margin-top: 40px;
+        background-color: #ffffff;
+        padding: 20px;
+        max-width: 100%;
+        border: none;
+    }
+
+    #detailsHeading {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    #detailsContent {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    #detailsContent h3 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+</style>
