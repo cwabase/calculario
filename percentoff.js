@@ -1,4 +1,3 @@
- <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Your JavaScript code here
         function extractNumbers(str) {
@@ -86,4 +85,3 @@ To find more examples, just choose one at the bottom of this page.
 
         calculateDiscount();
     });
-</script>
