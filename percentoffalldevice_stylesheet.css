@@ -1,101 +1,660 @@
+<style>body {
+    font-family: Arial, sans-serif;
+     text-align: center;
+}
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Your JavaScript code here
-        function extractNumbers(str) {
-            return str.match(/\d+/g).map(Number);
-        }
+.calculator {
+    justify-content: space-between;
+      display: flex;
+      max-width: 800px;
+      width: 680px !important;
+     height: 236px;
+     transform: translatex(0px) translatey(0px);
+     background-color: transparent;
+     background-repeat: repeat;
+     position: relative;
+     top: 19px;
+     border: 1px solid rgb(153, 131, 4);
+     border-radius: 5px;
+     margin: 10px 10px 10px 10px;
+     padding: 10px 10px 10px 10px;
+     font-family: 'Fredoka One', display;
+     font-weight: 600;
+}
 
-        const titleText = document.querySelector('title').textContent;
-        const numbers = extractNumbers(titleText);
-        if (numbers.length === 2) {
-            const discountPercentage = numbers[0];
-            const originalPrice = numbers[1];
-            document.getElementById('originalPrice').value = originalPrice || '';
-            document.getElementById('discountPercentage').value = discountPercentage || '';
-        }
+.inputs {
+    
+      margin-bottom: 20px;
+     background-color: #fff;
+     padding: 10px;
+     border-radius: 5px;
+}
 
-        function updateDetails(originalPrice, discountPercentage, discount, finalPrice) {
-            const detailsHeading = document.getElementById('detailsHeading');
-            const detailsContent = document.getElementById('detailsContent');
-            const discountType = titleText.includes("out of") ? "out of" : "off";
-            detailsHeading.textContent = `How to Calculate ${discountPercentage}% ${discountType} ${originalPrice} - Your Step-by-Step Solution`;
+.inputsection-heading {
+    font-size: 21px;
+     font-weight: bold;
+     margin-bottom: 10px;
+     text-align:left;
+     margin: 10px 10px 0px 10px;
+     padding: 0px 10px 3px 5px;
+     background-color: #cd9c23;
+     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+      height: 42px;
+     
+}
 
-            let content = `
-           
-       <div style="text-align: left;">
-    <h3>Calculation formula</h3>
-    To calculate percent off, you can use the following equations:<br>
-
-    <ol style="background-color: yellowgreen; color: red;">
-        <li>Amount Saved = Original Price x Discount % / 100</li>
-        <li>Sale Price = Original Price - Amount Saved</li>
-    </ol>
-
-    <h3 style="font-size: 24px; font-weight: bold; line-height: 1.5;">Solution</h3>
-    <h4 style="font-size: 20px; font-weight: bold; line-height: 1.5;" 1)>1) What is ${discountPercentage} percent (%) ${discountType} $${originalPrice}?</h4>
-    Using formula one and replacing the given values:<br>
-
-    <ul style="color: balck; font-weight: light;">
-        <li>Amount Saved = $${originalPrice} x ${discountPercentage} / 100</li>
-        <li>Amount Saved = $${discount.toFixed(2)} (answer)</li>
-    </ul>
-    <p style="color: brown;">In other words, a ${discountPercentage}% discount for an item with an original price of $${originalPrice} is equal to $${discount.toFixed(2)} (Amount Saved).</p>
-
-    <h4 style="font-size: 20px; font-weight: bold; line-height: 1.5;" 1)>2) How much to pay for an item of $${originalPrice} when discounted ${discountPercentage} percent (%)?</h4>
-    Using formula two and replacing the given values:<br>
-
-
-    <ul style="color: balck; font-weight: light;">
-        <li>Sale Price = $${originalPrice} - $${discount.toFixed(2)} </li>
-        <li> Sale Price = $${finalPrice.toFixed(2)} (answer) </li>
-        <li> This means, the cost of the item to you is $${finalPrice.toFixed(2)}.</li>
-    </ul>
-    <p style="color: brown;"> You will pay $${finalPrice.toFixed(2)} for an item with an original price of $${originalPrice} when discounted ${discountPercentage}%.</p>
-
-To find more examples, just choose one at the bottom of this page.
-</div>
-            
-          
-`;
-
-            detailsContent.innerHTML = content;
-        }
-
-        function calculateDiscount() {
-            const originalPrice = parseFloat(document.getElementById('originalPrice').value);
-            const discountPercentage = parseFloat(document.getElementById('discountPercentage').value);
-
-            if (!isNaN(originalPrice) && !isNaN(discountPercentage)) {
-                const discount = (originalPrice * discountPercentage) / 100;
-                const finalPrice = originalPrice - discount;
-
-                document.getElementById('discount').value = '$' + discount.toFixed(2);
-                document.getElementById('finalPrice').value = '$' + finalPrice.toFixed(2);
-
-                updateDetails(originalPrice, discountPercentage, discount, finalPrice);
-            } else {
-                
-            }
-        }
-
-        const originalPriceInput = document.getElementById('originalPrice');
-        const discountPercentageInput = document.getElementById('discountPercentage');
-
-        originalPriceInput.addEventListener('input', calculateDiscount);
-        discountPercentageInput.addEventListener('input', calculateDiscount);
-
-        calculateDiscount();
-    });
+.calculator .inputs h2 {
+    border-width: 1px;
+     position: relative;
+     left: -16px;
+     top: -6px;
+    
+     
+     transform: translatex(0px) translatey(0px);
+    
+     text-align: right;
+     font-size: 25px;
+     
+     text-align:left 
+}
 
 
-// Clear input fields upon clicking
-document.addEventListener("DOMContentLoaded", function() {
-    var numberInputs = document.querySelectorAll('input[type="number"]');
-    numberInputs.forEach(function(input) {
-        input.addEventListener("focus", function() {
-            this.value = '';
-        });
-    });
-});
-</script>
+
+
+.originalprice-form-group {
+    margin-bottom: 15px;
+}
+
+.discountpercentage-form-group {
+    margin-bottom: 15px;
+}
+
+.percentage-symbol {
+    font-weight: bold;
+     font-size: 20px;
+     position: relative;
+     top: 3px;
+     left: px;
+}
+
+#percentOffForm .discountpercentage-form-group label {
+    position: relative;
+     left: -7px;
+     width: 149px;
+     line-height: 26px;
+     height: 37px;
+     top: 6px;
+     transform: translatex(0px) translatey(0px);
+     margin: 5px 0px;
+     text-align: left;
+     font-size: 15px;
+     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+     direction: ltr;
+     padding: 5px 2px;
+    margin-left: 0px;
+     position: relative;
+}
+
+input[type="text"] {
+    width: 40%;
+     padding: 5px;
+}
+
+.results {
+    width: 45%;
+      margin-bottom: 20px;
+     background-color: #fff;
+     padding: 10px;
+     border-radius: 5px;
+}
+
+.section-heading {
+    font-size: 1.2rem;
+     font-weight: bold;
+     margin-bottom: 10px;
+}
+
+.discount-form-group {
+    margin-bottom: 15px;
+}
+
+.finalprice-form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+     width: 40%;
+     text-align: right;
+}
+
+.bigButton {
+    background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+     border-radius: 8px;
+}
+
+.smallButton {
+    background-color: #008CBA;
+     border: none;
+     color: white;
+     padding: 10px 22px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 12px;
+     cursor: pointer;
+     border-radius: 5px;
+}
+
+.buttons {
+    display: flex;
+     justify-content: center;
+     margin: 20px 0;
+}
+
+#detailsSection {
+    margin-top: 40px;
+     background-color: #ffffff;
+     padding: 20px;
+     max-width: 100%;
+     border: none;
+}
+
+#detailsHeading {
+    font-size: 1.8rem;
+     font-weight: bold;
+     margin-bottom: 20px;
+     text-align: left;
+}
+
+#detailsContent {
+    font-size: 1.2rem;
+     line-height: 1.6;
+}
+
+#detailsContent h3 {
+    font-size: 1.5rem;
+     margin-top: 20px;
+}
+
+.hentry .calculator {
+    width: 660px !important;
+     height: 236px;
+     background-color: #eeeeee;
+     border-color: rgb(153, 131, 4);
+     border-style: solid;
+     border-width: 1px;
+     margin-left: 10px;
+     margin-right: 10px;
+     transform: translatex(0px) translatey(0px);
+     position: relative;
+     left: -7px;
+     
+     top: 4px;
+}
+
+#main .hentry {
+    padding-right: 11px;
+     transform: translatex(0px) translatey(0px);
+}
+
+.hentry .buttons {
+    position: relative;
+     width: 660px !important;
+     transform: translatex(0px) translatey(0px);
+     top: -18px;
+}
+
+#percentOffForm .discountpercentage-form-group .percentage-symbol {
+    position: relative;
+     top: 6px;
+     font-size: 20px;
+}
+
+#percentOffForm .discountpercentage-form-group {
+    height: 49px;
+     position: relative;
+     top: -1px;
+     border-width: 1px;
+     width: 95%;
+     left: 2px;
+}
+
+#discountPercentage {
+    position: relative;
+     top: 5px;
+     width: 70px;
+}
+
+#percentOffForm {
+    transform: translatex(0px) translatey(0px);
+     width: 280px;
+     height: 110px;
+     position: relative;
+     left: -6px;
+}
+
+#percentOffForm .originalprice-form-group label {
+    position: relative;
+     left: 0pxpx;
+     border-width: 1px;
+     width: 120px;
+     text-align: left;
+     direction: ltr;
+     font-size: 15px;
+     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+.calculator .results h2 {
+    position: relative;
+     left: -5px;
+     border-width: 1px;
+     top: -6px;
+     text-align: left;
+     padding-left: 5px;
+     padding-bottom: 5px;
+     padding-right: 10px;
+     transform: translatex(0px) translatey(0px);
+     margin-bottom: 10px;
+     margin-right: 0px;
+     background-color: #cd9c23;
+     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+.results .discount-form-group label {
+    position: relative;
+     left: px;
+     text-align: left;
+     font-weight: 600;
+     font-size: 16px;
+     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+#discount {
+    position: relative;
+     left: 0px;
+     transform: translatex(0px) translatey(0px);
+     width: 170px;
+     color: #fb7d2a;
+     font-size: 18px;
+     border-style: none;
+}
+
+#finalPrice {
+    position: relative;
+     left: 0px;
+     width: 170px;
+     color: #fb7d2a;
+     font-size: 18px;
+     transform: translatex(0px) translatey(0px);
+     border-style: none;
+}
+
+.hentry .calculator .results {
+    transform: translatex(0px) translatey(0px);
+     border-width: 1px;
+     position: relative;
+     left: 4px;
+     background-color: #eeeeee;
+}
+
+.hentry .calculator .inputs {
+    border-width: 1px;
+     transform: translatex(0px) translatey(0px);
+     background-color: #eeeeee;
+     
+}
+
+
+
+#percentOffForm .originalprice-form-group {
+    border-width: 1px;
+     width: 273px;
+     transform: translatex(0px) translatey(0px);
+     padding-bottom: 2px;
+     padding-top: 1px;
+     position: relative;
+     top: 2px;
+     left: 2px;
+}
+
+#originalPrice {
+    height: 37px;
+     width: 130px;
+     padding-right: 0px;
+     padding-left: 0px;
+     margin-right: 0px;
+     margin-left: 0px;
+     transform: translatex(0px) translatey(0px);
+     position: relative;
+     left: 0px;
+}
+
+.results .finalprice-form-group label {
+    text-align: left;
+     position: relative;
+     left: 0px;
+     font-family: Arial,'Helvetica Neue',Helvetica,sans-serif;
+     font-weight: 600;
+     font-size: 17px;
+}
+
+#main-container #main .ct-container .hentry .entry-content .calculator .results {
+    width: 98% !important;
+}
+
+#main-container #main .ct-container .hentry .entry-content .calculator .results h2 {
+    width: 98% !important;
+}
+
+#main-container #main .ct-container .hentry .entry-content .calculator .inputs h2 {
+    width: 98% !important;
+}
+
+.calculator .results .discount-form-group {
+    height: 50px;
+     padding-top: 5px;
+     position: relative;
+     top: -8px;
+}
+
+.calculator .results .finalprice-form-group {
+    height: 50px;
+     transform: translatex(0px) translatey(0px);
+     padding-top: 5px;
+     position: relative;
+     top: -10px;
+}
+
+#resetButton {
+    height: 40px;
+     width: 80px;
+     margin-top: 14px;
+     padding-top: 11px;
+     background-color: #7a8589;
+}
+
+#calculateButton {
+    flex: 1 1 0%;
+}
+
+
+/* Hide arrows from number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Hide arrows from number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+/* Vertical layout for calculator sections */
+.calculator {
+    flex-direction: column !important;
+}
+
+/* Adjust calculator container and elements for vertical layout */
+.calculator {
+    height: auto !important;
+    width: auto !important;
+    padding: 10px;
+}
+.inputs, .results {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* -----  additional css  -------*/
+
+/* Calculator */
+#gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator{
+	background-color:rgba(205,156,35,0.07);
+	border-style:solid;
+	width:470px !important;
+	height:330px !important;
+	transform:translatex(14px) translatey(-3px);
+	border-width:1px;
+	border-color:#d28303;
+}
+
+/* Results */
+.gspb-smartcode .calculator .results{
+	height:150px;
+	transform:translatex(0px) translatey(0px);
+	background-color:transparent !important;
+	left:-10px !important;
+	top:-10px;
+}
+
+/* Inputs */
+.gspb-smartcode .calculator .inputs{
+	background-color:transparent !important;
+	position:relative;
+	top:-32px;
+	left:-10px;
+	transform:translatex(0px) translatey(0px);
+}
+
+/* Results */
+#main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results{
+	width:468px !important;
+}
+
+/* Finalprice form group */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results .finalprice-form-group{
+	bottom:auto !important;
+	width:90% !important;
+}
+
+/* Discount form group */
+.calculator .results .discount-form-group{
+	left:25px;
+}
+
+/* Finalprice form group */
+.calculator .results .finalprice-form-group{
+	left:25px;
+	top:-26px !important;
+}
+
+/* Discount */
+#discount{
+	width:204px !important;
+	left:-7px !important;
+	right:auto !important;
+	font-weight:600;
+}
+
+/* Final price */
+#finalPrice{
+	width:204px !important;
+	font-weight:600;
+}
+
+/* Heading */
+.calculator .results h2{
+	height:33px;
+	border-top-left-radius:5px;
+	transform:translatex(0px) translatey(0px);
+	left:-10px !important;
+	top:-10px !important;
+	border-top-right-radius:5px;
+	box-shadow:none;
+	background-color:rgba(205,156,35,0.26) !important;
+	padding-top:0px;
+	margin-bottom:10px;
+	padding-bottom:5px;
+}
+
+/* Heading */
+.calculator .inputs h2{
+	height:33px;
+	left:-20px !important;
+	background-color:rgba(205,156,35,0.09);
+}
+
+/* Percent off form */
+#percentOffForm{
+	left:8px !important;
+	right:auto !important;
+	width:98% !important;
+	transform:translatex(0px) translatey(0px);
+	top:-13px;
+}
+
+/* Originalprice form group */
+#percentOffForm .originalprice-form-group{
+	width:83% !important;
+	left:38px !important;
+}
+
+/* Discountpercentage form group */
+#percentOffForm .discountpercentage-form-group{
+	width:83% !important;
+	top:-8px !important;
+	left:38px !important;
+}
+
+/* Original price */
+#originalPrice{
+	width:180px !important;
+}
+
+/* Label */
+#percentOffForm .originalprice-form-group label{
+	left:-29px;
+}
+
+/* Discountpercentage form group */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs #percentOffForm .discountpercentage-form-group{
+	bottom:auto !important;
+	right:auto !important;
+}
+
+/* Label */
+#percentOffForm .discountpercentage-form-group label{
+	left:-60px !important;
+	top:1px !important;
+}
+
+/* Label */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs #percentOffForm .discountpercentage-form-group label{
+	right:auto !important;
+	bottom:auto !important;
+}
+
+/* Discount percentage */
+#discountPercentage{
+	top:0px !important;
+	bottom:auto !important;
+	left:-63px;
+}
+
+/* Span Tag */
+#percentOffForm .discountpercentage-form-group span{
+	top:3px !important;
+	left:-63px;
+}
+
+/* Span Tag */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs #percentOffForm .discountpercentage-form-group span{
+	bottom:auto !important;
+}
+
+/* Discount form group */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results .discount-form-group{
+	width:90% !important;
+}
+
+/* Label */
+.results .discount-form-group label{
+	width:175px;
+	left:-7px;
+	font-size:17px !important;
+}
+
+/* Label */
+.results .finalprice-form-group label{
+	left:-14px !important;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/* Label */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results .finalprice-form-group label{
+	right:auto !important;
+}
+
+/* Originalprice form group */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs #percentOffForm .originalprice-form-group{
+	right:auto !important;
+}
+
+/* Results */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results{
+	right:auto !important;
+}
+
+/* Inputs */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs{
+	width:104% !important;
+}
+
+/* Heading */
+#main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results h2{
+	width:468px !important;
+	right:auto !important;
+}
+
+/* Heading */
+#main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs h2{
+	width:468px !important;
+}
+
+/* Container */
+#main .ct-container{
+	transform:translatex(0px) translatey(0px);
+}
+
+/* Heading */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .inputs h2{
+	right:auto !important;
+}
+
+/* Heading */
+#main-container #main .ct-container .hentry .entry-content #gspb_container-id-gsbp-e3873fc0-376d .gspb-smartcode .calculator .results h2{
+	bottom:auto !important;
+}
+
+/* Details section */
+#detailsSection{
+	position:relative;
+	top:-15px;
+	
+}
+
+
+
+</style>
