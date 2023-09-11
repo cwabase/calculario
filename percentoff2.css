@@ -1,0 +1,484 @@
+<!-- CSS -->
+
+<style>
+    /* Add styling for the sections */
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+
+.calculator {
+    justify-content: space-between; /* Added this */
+    display: flex; /* Added this */
+    max-width: 800px; /* Adjusted this */
+    width: 680px !important;
+    height: 236px;
+    transform: translatex(0px) translatey(0px);
+    background-color: transparent;
+    background-repeat: repeat;
+    position: relative;
+    top: 19px;
+    border: 1px solid rgb(153, 131, 4);
+    border-radius: 5px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    font-family: 'Fredoka One', display;
+    font-weight: 400;
+    
+ 
+}
+
+    /* -------------------------------ALL INPUTS SECTION STYLE --------------------------------------------------------- */
+
+    /* INPUTS Section */
+
+    .inputs {
+        width: 45%; /* Added this */
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /*  INPUTS Section Heading */
+
+    .inputsection-heading {
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-align: left;
+        margin: 10px 10px 0px 10px;
+        padding: 10px 10px 10px 10px;
+    }
+
+
+    /* INPUTS - Original price Form Group */
+
+    .originalprice-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* INPUTS - Discount percentage Form Group */
+
+    .discountpercentage-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* INPUTS - Final percentage-symbol */
+
+    .percentage-symbol {
+        font-weight: bold;
+        font-size: 20px;
+        position: relative;
+        top: 3px;
+        left:px;
+    }
+
+
+    /* INPUTS - LABELS STYLING */
+
+    #percentOffForm .discountpercentage-form-group label {
+    position: relative;
+    left: 0px;
+    width: 167px;
+    line-height: 26px;
+    height: 37px;
+    top: 2px;
+    transform: translatex(0px) translatey(0px);
+    margin: 5px 0px;
+    text-align: right;
+    font-size: 16px;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    direction: ltr;
+    padding: 5px 2px;
+}
+
+
+    /* INPUTS SECTION - inputs fields */
+
+    input[type="number"],
+    input[type="text"] {
+        width: 40%;
+        padding: 5px;
+    }
+
+    /* -------------------------------ALL RESULTS SECTION STYLE --------------------------------------------------------- */
+
+    /* This is the RESULTS Section */
+
+    .results {
+        width: 45%; /* Added this */
+        margin-bottom: 20px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    /* RESULTS Section Heading */
+
+    .section-heading {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* RESUTS - Discount Form Group */
+
+    .discount-form-group {
+        margin-bottom: 15px;
+    }
+
+    /* RESUTS - Final Price Form Group */
+
+    .finalprice-form-group {
+        margin-bottom: 15px;
+    }
+
+
+
+    /* RESUTS - Final Price Form Group */
+
+    label {
+        display: inline-block;
+        width: 40%;
+        text-align: right;
+    }
+
+    /* RESUTS SECTION - LABELS STYLING  */
+
+    input[type="number"],
+    input[type="text"] {
+        width: 40%;
+        padding: 5px;
+    }
+    
+  /* CALVULATE & RESET BUTTON - SECTION STYLING  */
+
+.bigButton {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.smallButton {
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;  
+  cursor: pointer;
+  border-radius: 5px;
+}
+    
+ .buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0; 
+}   
+    
+
+    /* -------------------------------ALL DETAILS SECTION STYLE --------------------------------------------------------- */
+
+    /* New styles for the Details section */
+
+    #detailsSection {
+        margin-top: 40px;
+        background-color: #ffffff;
+        padding: 20px;
+        max-width: 100%;
+        border: none;
+    }
+
+    #detailsHeading {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    #detailsContent {
+        font-size: 1.2rem;
+        line-height: 1.6;
+    }
+
+    #detailsContent h3 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+    }
+
+/* -------------------------------ADDITIONNAL MODIFICATION STYLE --------------------------------------------------------- */
+
+/* Calculator */
+.hentry .calculator{
+	width:660px !important;
+	height:236px;
+	background-color:#eeeeee;
+	border-color:rgb(153, 131, 4);
+	border-style:solid;
+	border-width:1px;
+	margin-left:10px;
+	margin-right:10px;
+	transform:translatex(0px) translatey(0px);
+	position:relative;
+	left:-7px;
+	font-family:'Fredoka One', display;
+	top:4px;
+}
+
+/* Post Division */
+#main .hentry{
+	padding-right:11px;
+	transform:translatex(0px) translatey(0px);
+}
+
+/* Buttons */
+.hentry .buttons{
+	position:relative;
+	width:660px !important;
+	transform:translatex(0px) translatey(0px);
+	top:-18px;
+}
+
+/* Percentage symbol */
+#percentOffForm .discountpercentage-form-group .percentage-symbol{
+	position:relative;
+	top:6px;
+	font-size:20px;
+}
+
+/* Label */
+#percentOffForm .discountpercentage-form-group label{
+	margin-left:0px;
+	width:149px;
+	position:relative;
+	top:6px;
+	text-align:left;
+	left:-7px;
+	font-size:15px;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/* Discountpercentage form group */
+#percentOffForm .discountpercentage-form-group{
+	height:49px;
+	position:relative;
+	top:-1px;
+	border-width:1px;
+	width:95%;
+	left:2px;
+}
+
+/* Discount percentage */
+#discountPercentage{
+	position:relative;
+	top:5px;
+	width:70px;
+}
+
+/* Percent off form */
+#percentOffForm{
+	transform:translatex(0px) translatey(0px);
+	width:280px;
+	height:110px;
+	position:relative;
+	left:-6px;
+}
+
+/* Label */
+#percentOffForm .originalprice-form-group label{
+	position:relative;
+	left:0pxpx;
+	border-width:1px;
+	width:120px;
+	text-align:left;
+	direction:ltr;
+	font-size:15px;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/* Heading */
+.calculator .results h2{
+	position:relative;
+	left:-5px;
+	border-width:1px;
+	top:-6px;
+	text-align:left;
+	padding-left:5px;
+	padding-bottom:5px;
+	padding-right:10px;
+	transform:translatex(0px) translatey(0px);
+	margin-bottom:10px;
+	margin-right: 0px;
+	background-color:#cd9c23;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/* Label */
+.results .discount-form-group label{
+	position:relative;
+	left: px;
+	text-align:left;
+	font-weight:600;
+	font-size:16px;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/* Discount */
+#discount{
+	position:relative;
+	left:0px;
+	transform:translatex(0px) translatey(0px);
+	width:170px;
+	color:#fb7d2a;
+	font-size:18px;
+	border-style:none;
+}
+
+/* Final price */
+#finalPrice{
+	position:relative;
+	left:0px;
+	width:170px;
+	color:#fb7d2a;
+	font-size:18px;
+	transform:translatex(0px) translatey(0px);
+	border-style:none;
+}
+
+/* Results */
+.hentry .calculator .results{
+	transform:translatex(0px) translatey(0px);
+	border-width:1px;
+	position:relative;
+	left:4px;
+	background-color:#eeeeee;
+}
+
+/* Inputs */
+.hentry .calculator .inputs{
+	border-width:1px;
+	transform:translatex(0px) translatey(0px);
+	background-color:#eeeeee;
+}
+
+/* Heading */
+.calculator .inputs h2{
+	border-width:1px;
+	position:relative;
+	left:-16px;
+	top:-6px;
+	padding-top:0px;
+	padding-left:5px;
+	padding-right:10px;
+	padding-bottom:3px;
+	background-color:#cd9c23;
+	transform:translatex(0px) translatey(0px);
+	height:42px;
+	text-align:right;
+	font-size:25px;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+}
+
+/* Originalprice form group */
+#percentOffForm .originalprice-form-group{
+	border-width:1px;
+	width:273px;
+	transform:translatex(0px) translatey(0px);
+	padding-bottom:2px;
+	padding-top:1px;
+	position:relative;
+	top:2px;
+	left:2px;
+}
+
+/* Original price */
+#originalPrice{
+	height:37px;
+	width:130px;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	transform:translatex(0px) translatey(0px);
+	position:relative;
+	left:0px;
+}
+
+/* Label */
+.results .finalprice-form-group label{
+	text-align:left;
+	position:relative;
+	left:0px;
+	font-family:Arial,'Helvetica Neue',Helvetica,sans-serif;
+	font-weight:600;
+	font-size:17px;
+}
+
+/* Results */
+#main-container #main .ct-container .hentry .entry-content .calculator .results{
+	width:3450px !important;
+}
+
+/* Heading */
+#main-container #main .ct-container .hentry .entry-content .calculator .results h2{
+	width:98% !important;
+}
+
+/* Heading */
+#main-container #main .ct-container .hentry .entry-content .calculator .inputs h2{
+	width:98% !important;
+}
+
+/* Discount form group */
+.calculator .results .discount-form-group{
+	height:50px;
+	padding-top:5px;
+	position:relative;
+	top:-8px;
+}
+
+/* Finalprice form group */
+.calculator .results .finalprice-form-group{
+	height:50px;
+	transform:translatex(0px) translatey(0px);
+	padding-top:5px;
+	position:relative;
+	top:-10px;
+}
+
+/* Reset button */
+#resetButton{
+	height:40px;
+	width:80px;
+	margin-top:14px;
+	padding-top:11px;
+	background-color:#7a8589;
+}
+
+/* Calculate button */
+#calculateButton{
+	flex:1 1 0%;
+}
+
+
+
+
+
+
+
+</style>
