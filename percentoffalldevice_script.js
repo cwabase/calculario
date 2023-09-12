@@ -1,5 +1,5 @@
 
-<script>
+
     document.addEventListener("DOMContentLoaded", function() {
         // Your JavaScript code here
         function extractNumbers(str) {
@@ -98,4 +98,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
-</script>
+
