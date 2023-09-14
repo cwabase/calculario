@@ -1,1 +1,42 @@
+#calculator {
+      width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .input-section {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Add this line to center align horizontally */
+      flex-wrap: wrap; /* Add this line to allow wrapping */
+    }
+    
+    .input-section label {
+      margin-right: 10px;
+      flex: 1; /* Add this line to make the label take up equal space */
+    }
+    
+    .input-section input {
+      margin-right: 10px;
+      flex: 1; /* Add this line to make the input take up equal space */
+    }
+    
+    .input-section input:last-child {
+      margin-right: 0;
+    }
 
+    #results {
+      margin-top: 20px;
+      background-color: #eee;
+      padding: 10px;
+    }
+
+    #results h3 {
+      background-color: green;
+      color: white;
+      padding: 10px;
+    }
+    
+    #results p {
+      font-weight: bold;
+    }
