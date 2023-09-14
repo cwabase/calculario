@@ -1,1 +1,95 @@
 
+  <div id="calculator">
+  
+    <form>
+    
+      <div>
+        
+        <input type="radio" id="percent-of" name="calc-type" checked>
+        <label for="percent-of">What is X percent of Y?</label><br>
+        
+        <input type="radio" id="percent-change" name="calc-type">
+        <label for="percent-change">Percent change from X to Y</label><br>
+
+        <input type="radio" id="increase-decrease" name="calc-type">
+        <label for="increase-decrease">Increase or decrease X by Y%</label><br>
+          
+        <input type="radio" id="x-is-percent" name="calc-type">
+        <label for="x-is-percent">X is what percent of Y?</label><br>
+
+        <input type="radio" id="x-is-y-percent" name="calc-type">
+        <label for="x-is-y-percent">X is Y percent of what number?</label><br>
+          
+        <input type="radio" id="percent-difference" name="calc-type">
+        <label for="percent-difference">Percentage difference between X and Y</label><br>
+        
+      </div>
+      
+      <div id="percent-of-inputs" class="input-section">
+      
+        <label for="x-percent">X (percent):</label>
+        <input type="number" id="x-percent">
+        
+        <label for="y-number">Y (number):</label>
+        <input type="number" id="y-number">
+        
+      </div>
+      
+      <div id="percent-change-inputs" class="input-section">
+      
+        <label for="x-original">X (original):</label>
+        <input type="number" id="x-original">
+        
+        <label for="y-new">Y (new):</label>
+        <input type="number" id="y-new">
+        
+      </div>
+      
+      <div id="increase-decrease-inputs" class="input-section">
+      
+        <label for="x-base">X (base):</label>
+        <input type="number" id="x-base">
+        
+        <label for="y-percentage">Y (percentage):</label>
+        <input type="number" id="y-percentage">
+        
+      </div>
+      
+      <div id="x-is-percent-inputs" class="input-section">
+      
+        <label for="x-part">X (part):</label>
+        <input type="number" id="x-part">
+        
+        <label for="y-whole">Y (whole):</label>
+        <input type="number" id="y-whole">
+        
+      </div>
+      
+      <div id="x-is-y-percent-inputs" class="input-section">
+      
+        <label for="x-number">X (number):</label>
+        <input type="number" id="x-number">
+        
+        <label for="y-percent">Y (percent):</label>
+        <input type="number" id="y-percent">
+        
+      </div>
+      
+      <div id="percent-difference-inputs" class="input-section">
+      
+        <label for="x-first">X (first number):</label>
+        <input type="number" id="x-first">
+        
+        <label for="y-second">Y (second number):</label>
+        <input type="number" id="y-second">
+        
+      </div>
+      
+    </form>
+    
+    <button type="button" id="calculate-btn">Calculate</button>
+    
+    <div id="results"></div>
+
+  </div>
+
